@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace LightNovelHub
 {
@@ -14,6 +15,7 @@ namespace LightNovelHub
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
+            this.AcceptButton = button2;
             this.Load += new EventHandler(Form1_Load);
         }
 
@@ -31,7 +33,22 @@ namespace LightNovelHub
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string username = textBox1.Text;
+            string password = textBox2.Text;
 
+            // Check username and password
+            if (username == "benaichalae" && password == "Hydra1996")
+            {
+                // Login successful, open new form and hide current form
+                Form2 form2 = new Form2();
+                form2.Show();
+                this.Hide(); // Use Hide() instead of Close() to keep the application running
+            }
+            else
+            {
+                // Login failed, show error message
+                MessageBox.Show("Invalid username or password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -52,6 +69,16 @@ namespace LightNovelHub
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string username = textBox1.Text;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            string password = textBox2.Text;
         }
     }
 }
