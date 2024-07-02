@@ -80,5 +80,17 @@ namespace LightNovelHub
         {
             string password = textBox2.Text;
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+        
+void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string url = @"C:\Users\benai\source\repos\LightNovelHub\LightNovelHub\sites\createaccount.html";
+            url = url.Replace(@"\", "/");
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+        }
     }
 }
