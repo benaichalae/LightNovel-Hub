@@ -45,7 +45,7 @@
             // 
             // panelMenu
             // 
-            panelMenu.BackColor = Color.FromArgb(61, 61, 91);
+            panelMenu.BackColor = Color.FromArgb(51, 51, 76);
             panelMenu.Controls.Add(btnAboutUs);
             panelMenu.Controls.Add(btnSetting);
             panelMenu.Controls.Add(btnHistory);
@@ -57,7 +57,6 @@
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(220, 531);
             panelMenu.TabIndex = 0;
-            panelMenu.Paint += panelMenu_Paint;
             // 
             // btnAboutUs
             // 
@@ -141,7 +140,7 @@
             btnBrowser.TextAlign = ContentAlignment.MiddleLeft;
             btnBrowser.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnBrowser.UseVisualStyleBackColor = false;
-            btnBrowser.Click += btnrowser_click;
+            btnBrowser.Click += btnBrowser_Click;
             // 
             // btnProfile
             // 
@@ -174,11 +173,10 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(220, 80);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // panelLibrary
             // 
-            panelLibrary.BackColor = Color.FromArgb(61, 61, 91);
+            panelLibrary.BackColor = Color.FromArgb(51, 51, 76);
             panelLibrary.BorderStyle = BorderStyle.FixedSingle;
             panelLibrary.Controls.Add(pictureBox1);
             panelLibrary.Dock = DockStyle.Fill;
@@ -186,7 +184,6 @@
             panelLibrary.Name = "panelLibrary";
             panelLibrary.Size = new Size(648, 531);
             panelLibrary.TabIndex = 1;
-            panelLibrary.Paint += panelLibrary_Paint;
             // 
             // pictureBox1
             // 

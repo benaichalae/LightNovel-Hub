@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
-using HtmlAgilityPack;
 
 namespace LightNovelHub.Forms
 {
@@ -11,101 +9,63 @@ namespace LightNovelHub.Forms
         public FormBrowser()
         {
             InitializeComponent();
+
+            // Enable drag-and-drop functionality
+            this.listView1.AllowDrop = true;
         }
 
-        private async void btnDownloadNovel_Click(object sender, EventArgs e)
+        private void FormBrowser_DragEnter(object sender, DragEventArgs e)
         {
-            string baseUrl = "https://boxnovel.com/novel";
-            string novelName = search.Text.Trim().Replace(" ", "-").ToLower();
-            string novelUrl = $"{baseUrl}/{novelName}"; // Construct the novel URL
-
-            await DownloadLightNovel(novelUrl);
-        }
-
-        private async Task DownloadLightNovel(string url)
-        {
-            using HttpClient client = new HttpClient();
-            try
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
-                HttpResponseMessage response = await client.GetAsync(url);
-                response.EnsureSuccessStatusCode();
-                string pageContent = await response.Content.ReadAsStringAsync();
-
-                HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
-                document.LoadHtml(pageContent);
-
-                // Extract novel title
-                var titleNode = document.DocumentNode.SelectSingleNode("//h1[@class='entry-title']");
-                string title = titleNode?.InnerText.Trim();
-                if (string.IsNullOrEmpty(title))
+                // Check if the dropped files are ePub files
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                foreach (string file in files)
                 {
-                    title = "Unknown Title";
-                }
-                MessageBox.Show($"Title: {title}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Extract chapter links
-                var chapterNodes = document.DocumentNode.SelectNodes("//ul[@class='main version-chap']//li/a");
-                if (chapterNodes != null)
-                {
-                    foreach (var chapterNode in chapterNodes)
+                    if (Path.GetExtension(file).Equals(".epub", StringComparison.OrdinalIgnoreCase))
                     {
-                        string chapterTitle = chapterNode.InnerText.Trim();
-                        string chapterLink = "https://boxnovel.com" + chapterNode.GetAttributeValue("href", "");
-                        MessageBox.Show($"Downloading {chapterTitle} from {chapterLink}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        await DownloadChapter(chapterLink);
+                        e.Effect = DragDropEffects.Copy;
+                        return; // Exit after setting the effect to Copy
                     }
                 }
-                else
+            }
+
+            // If no ePub files were found, set the effect to None (disable drop)
+            e.Effect = DragDropEffects.None;
+        }
+
+        private void FormBrowser_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            foreach (string file in files)
+            {
+                // Check if it's an ePub file (optional, since it's already checked in DragEnter)
+                if (Path.GetExtension(file).Equals(".epub", StringComparison.OrdinalIgnoreCase))
                 {
-                    MessageBox.Show("No chapters found.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Define your target folder
+                    string targetFolder = @"C:\Users\benai\source\repos\LightNovelHub\LightNovelHub\ePub";
+
+                    // Construct a unique file name if necessary
+                    string fileName = Path.GetFileName(file);
+                    string destFilePath = Path.Combine(targetFolder, fileName);
+
+                    // Copy the file to the target folder
+                    File.Copy(file, destFilePath, true); // Set overwrite to true if needed
                 }
             }
-            catch (HttpRequestException ex)
-            {
-                MessageBox.Show($"HTTP Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
-        private async Task DownloadChapter(string url)
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using HttpClient client = new HttpClient();
-            try
+            // Implement logic for when selected index changes
+            // For example, get selected item:
+            if (listView1.SelectedItems.Count > 0)
             {
-                HttpResponseMessage response = await client.GetAsync(url);
-                response.EnsureSuccessStatusCode();
-                string pageContent = await response.Content.ReadAsStringAsync();
-
-                HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
-                document.LoadHtml(pageContent);
-
-                // Extract chapter content
-                var contentNode = document.DocumentNode.SelectSingleNode("//div[@class='cha-words']");
-                string content = contentNode?.InnerHtml ?? "No content";
-
-                // Save chapter content to file
-                var titleNode = document.DocumentNode.SelectSingleNode("//h1[@class='entry-title']");
-                string chapterTitle = titleNode?.InnerText.Trim() ?? "Unknown Chapter";
-                string fileName = $"{chapterTitle}.html";
-                await System.IO.File.WriteAllTextAsync(fileName, content);
-                MessageBox.Show($"Saved {chapterTitle} to {fileName}", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ListViewItem selectedItem = listView1.SelectedItems[0];
+                // Example: Display selected item text
+                MessageBox.Show(selectedItem.Text);
             }
-            catch (HttpRequestException ex)
-            {
-                MessageBox.Show($"HTTP Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void search_TextChanged(object sender, EventArgs e)
-        {
-            // Optional: You can add functionality here if needed
         }
     }
 }

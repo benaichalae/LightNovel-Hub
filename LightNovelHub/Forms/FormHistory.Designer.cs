@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            SuspendLayout();
+            this.historyPanel = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
             // 
-            // textBox1
+            // historyPanel
             // 
-            textBox1.Location = new Point(129, 51);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(370, 23);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "History";
+            this.historyPanel.AutoScroll = true;
+            this.historyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.historyPanel.Location = new System.Drawing.Point(0, 0);
+            this.historyPanel.Name = "historyPanel";
+            this.historyPanel.Size = new System.Drawing.Size(800, 450);
+            this.historyPanel.TabIndex = 0;
             // 
             // FormHistory
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(textBox1);
-            Name = "FormHistory";
-            Text = "FormHistory";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(65, 66, 102);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.historyPanel);
+            this.Name = "FormHistory";
+            this.Text = "Reading History";
+            this.ResumeLayout(false);
         }
 
         #endregion
 
-        private TextBox textBox1;
+        private System.Windows.Forms.Panel historyPanel;
     }
 }

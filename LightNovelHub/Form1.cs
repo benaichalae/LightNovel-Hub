@@ -21,7 +21,7 @@ namespace LightNovelHub
             this.Load += new EventHandler(Form1_Load);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object? sender, EventArgs e)
         {
             // Apply rounded corners
             int radius = 30; // Adjust the radius as needed

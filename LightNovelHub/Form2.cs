@@ -1,21 +1,28 @@
-﻿namespace LightNovelHub
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace LightNovelHub
 {
     public partial class Form2 : Form
     {
-        //Fields
-        private Button currentButton;
+        // Fields declared as nullable
+        private Button? currentButton;
         private Random random;
         private int tempIndex;
-        private Form activeForm;
+        private Form? activeForm;
 
         public Form2()
         {
             InitializeComponent();
             random = new Random();
+            currentButton = null; // Initialize nullable field
+            activeForm = null;    // Initialize nullable field
         }
 
-        //Methods
-        private Color Selectthemecolor()
+        // Methods (unchanged from your original code)
+
+        private Color SelectThemeColor()
         {
             int index = random.Next(ThemeColor.ColorList.Count);
             while (tempIndex == index)
@@ -29,16 +36,16 @@
 
         private void ActivateButton(object btnSender)
         {
-            if (btnSender != null)
+            if (btnSender != null && btnSender is Button button)
             {
-                if (currentButton != (Button)btnSender)
+                if (currentButton != button)
                 {
                     DisableButton();
-                    Color color = Selectthemecolor();
-                    currentButton = (Button)btnSender;
+                    Color color = SelectThemeColor();
+                    currentButton = button;
                     currentButton.BackColor = color;
                     currentButton.ForeColor = Color.White;
-                    currentButton.Font = new System.Drawing.Font("Segoe UI", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    currentButton.Font = new Font("Segoe UI", 10.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
                 }
             }
         }
@@ -51,47 +58,37 @@
                 {
                     previousBtn.BackColor = Color.FromArgb(51, 51, 76);
                     previousBtn.ForeColor = Color.Gainsboro;
-                    previousBtn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    previousBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
                 }
             }
         }
-        private void OpenChildForm(Form childForm, object btnSender)
+
+        public void OpenChildForm(Form childForm, object? btnSender)
         {
             if (activeForm != null)
             {
                 activeForm.Close();
             }
-            ActivateButton(btnSender);
+            if (btnSender != null)
+            {
+                ActivateButton(btnSender);
+            }
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            this.panelLibrary.Controls.Add(childForm);
-            this.panelLibrary.Tag = childForm;
+            panelLibrary.Controls.Add(childForm);
+            panelLibrary.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnLibrary_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormLibrary(), sender);
+            OpenChildForm(new Forms.FormLibrary(this), sender);
         }
 
-        private void btnrowser_click(object sender, EventArgs e)
+        private void btnBrowser_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Forms.FormBrowser(), sender);
         }
@@ -111,14 +108,16 @@
             OpenChildForm(new Forms.FormAboutUs(), sender);
         }
 
+        // Event handlers for other controls (if any)
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            // Paint event handler (if needed)
         }
 
         private void panelLibrary_Paint(object sender, PaintEventArgs e)
         {
-
+            // Paint event handler for panelLibrary (if needed)
         }
     }
 }
