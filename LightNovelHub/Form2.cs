@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace LightNovelHub
+﻿namespace LightNovelHub
 {
     public partial class Form2 : Form
     {
@@ -17,6 +6,7 @@ namespace LightNovelHub
         private Button currentButton;
         private Random random;
         private int tempIndex;
+        private Form activeForm;
 
         public Form2()
         {
@@ -65,6 +55,22 @@ namespace LightNovelHub
                 }
             }
         }
+        private void OpenChildForm(Form childForm, object btnSender)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            ActivateButton(btnSender);
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            this.panelLibrary.Controls.Add(childForm);
+            this.panelLibrary.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -80,32 +86,37 @@ namespace LightNovelHub
 
         }
 
-        private void btnProfile_Click(object sender, EventArgs e)
+        private void btnLibrary_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormLibrary(), sender);
         }
 
-        private void btnHistory_click(object sender, EventArgs e)
+        private void btnrowser_click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormBrowser(), sender);
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormHistory(), sender);
         }
 
-        private void btnSetting_Click(object sender, EventArgs e)
+        private void btnProfile_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormProfile(), sender);
         }
 
         private void btnAboutUs_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new Forms.FormAboutUs(), sender);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelLibrary_Paint(object sender, PaintEventArgs e)
         {
 
         }
