@@ -37,7 +37,10 @@
             btnProfile = new Button();
             panel1 = new Panel();
             panelLibrary = new Panel();
+            pictureBox1 = new PictureBox();
             panelMenu.SuspendLayout();
+            panelLibrary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panelMenu
@@ -175,12 +178,26 @@
             // 
             // panelLibrary
             // 
+            panelLibrary.BackColor = Color.FromArgb(61, 61, 91);
+            panelLibrary.BorderStyle = BorderStyle.FixedSingle;
+            panelLibrary.Controls.Add(pictureBox1);
             panelLibrary.Dock = DockStyle.Fill;
             panelLibrary.Location = new Point(220, 0);
             panelLibrary.Name = "panelLibrary";
             panelLibrary.Size = new Size(648, 531);
             panelLibrary.TabIndex = 1;
             panelLibrary.Paint += panelLibrary_Paint;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(98, 151);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(444, 208);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // Form2
             // 
@@ -194,6 +211,9 @@
             Name = "Form2";
             Text = "LightNovel Hub";
             panelMenu.ResumeLayout(false);
+            panelLibrary.ResumeLayout(false);
+            panelLibrary.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -207,5 +227,6 @@
         private Button btnAboutUs;
         private Button btnSetting;
         private Panel panelLibrary;
+        private PictureBox pictureBox1;
     }
 }

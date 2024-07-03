@@ -28,23 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
+            btnDownloadNovel = new Button();
+            search = new TextBox();
             SuspendLayout();
             // 
-            // textBox1
+            // btnDownloadNovel
             // 
-            textBox1.Location = new Point(113, 43);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(315, 23);
-            textBox1.TabIndex = 0;
-            textBox1.Text = "Browser";
+            btnDownloadNovel.Location = new Point(122, 139);
+            btnDownloadNovel.Name = "btnDownloadNovel";
+            btnDownloadNovel.Size = new Size(535, 77);
+            btnDownloadNovel.TabIndex = 0;
+            btnDownloadNovel.Text = "DownloadNovel";
+            btnDownloadNovel.UseVisualStyleBackColor = true;
+            btnDownloadNovel.Click += btnDownloadNovel_Click;
+            // 
+            // search
+            // 
+            search.Location = new Point(145, 53);
+            search.Name = "search";
+            search.Size = new Size(487, 23);
+            search.TabIndex = 1;
+            search.TextChanged += search_TextChanged;
             // 
             // FormBrowser
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(61, 61, 91);
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox1);
+            Controls.Add(search);
+            Controls.Add(btnDownloadNovel);
             Name = "FormBrowser";
             Text = "FormBrowser";
             ResumeLayout(false);
@@ -53,6 +66,7 @@
 
         #endregion
 
-        private TextBox textBox1;
+        private Button btnDownloadNovel;
+        private TextBox search;
     }
 }
