@@ -1,89 +1,100 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <style>
-        body {
-            background: linear-gradient(to bottom, #290D38, #290B37);
-            font-family: Arial, sans-serif;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   background-color: #f0f8ff;
+   color: #333;
+}
 
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
+.container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   max-width: 300px;
+   padding: 20px;
+   background-color: #f8f8ff;
+   border-radius: 10px;
+   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
 
-        .logo {
-            font-size: 3em;
-            margin-bottom: 2em;
-            cursor: pointer;
-        }
+.form {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   margin-bottom: 20px;
+}
 
-        .form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+.form input {
+   margin-bottom: 10px;
+   padding: 10px;
+   border: none;
+   border-bottom: 1px solid #ccc;
+}
 
-        .form input {
-            margin-bottom: 1em;
-            padding: 0.5em;
-            border: none;
-            border-radius: 1em;
-            font-size: 2em;
-        }
+.social-media {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   margin-bottom: 20px;
+}
 
-        .form button {
-            padding: 0.5em 1em;
-            border: none;
-            border-radius: 1em;
-            font-size: 2em;
-            background-color: #2C3E50;
-            color: #fff;
-            cursor: pointer; /* Add cursor pointer to button */
-        }
-    </style>
-</head>
+.social-media img {
+   width: 20px;
+   height: 20px;
+}
+
+.cta {
+   width: 100%;
+   padding: 10px;
+   background-color: #4682b4;
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+}
+
+.footer {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   font-size: 12px;
+}
+
+.footer p {
+   margin-bottom: 10px;
+}
+
+.footer a {
+   color: #666;
+}
+</style>
 <body>
-    <div class="container">
-        <div class="logo" onclick="openAdobeStock()">
-            <div class="logo-img">
-                <div class="logo-text">
-                    <p>Adobe Stock</p>
-                    <img src="C:\Users\benai\source\repos\LightNovelHub\LightNovelHub\pic\logo.PNG" alt="logo">
-                </div>
-            </div>
-        </div>
-        <div class="form">
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name">
-            <input type="text" placeholder="Username">
-            <input type="password" placeholder="Password">
-            <input type="email" placeholder="Confirm Password">
-            <input type="email" placeholder="E-mail">
-            <button onclick="createAccount()">Create account</button>
-        </div>
-    </div>
-
-    <script>
-        function openAdobeStock() {
-            // Specify the URL you want to open
-            var url = "https://stock.adobe.com";
-
-            // Open the URL in a new tab/window
-            window.open(url, "_blank");
-        }
-
-        function createAccount() {
-            // Add your account creation logic here
-            alert("Account creation logic goes here!");
-        }
-    </script>
+   <div class="container">
+       <form class="form">
+           <input type="text" placeholder="Sign up with Email">
+           <input type="text" placeholder="Username">
+           <input type="password" placeholder="Password">
+           <input type="text" placeholder="SHOW">
+           <input type="text" placeholder="CONFIRM PASSWORD">
+           <div class="social-media">
+               <img src="C:\Users\benai\source\repos\LightNovelHub\LightNovelHub\pic\Facebook.png" alt="Facebook">
+               <img src="C:\Users\benai\source\repos\LightNovelHub\LightNovelHub\pic\TwitterX.png" alt="TwitterX">
+               <img src="C:\Users\benai\source\repos\LightNovelHub\LightNovelHub\pic\Instagram.png" alt="Instagram">
+           </div>
+           <button class="cta">SIGN UP</button>
+       </form>
+       <div class="footer">
+           <p>ALREADY HAVE AN ACCOUNT? SIGN IN:</p>
+           <a href="#">Sign In</a>
+           <p>By signing up to lightbluehub.com, you agree to our <a href="#">Terms of Service and Privacy Policy</a></p>
+       </div>
+   </div>
 </body>
 </html>

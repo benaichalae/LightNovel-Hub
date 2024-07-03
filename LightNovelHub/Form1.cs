@@ -1,8 +1,10 @@
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace LightNovelHub
 {
+    [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
     public partial class Form1 : Form
     {
         [DllImport("user32.dll")]
@@ -81,16 +83,39 @@ namespace LightNovelHub
             string password = textBox2.Text;
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkLabel_resetpassword(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            string url = @"C:\Users\benai\source\repos\LightNovelHub\LightNovelHub\sites\resetpassword.html";
+            url = url.Replace(@"\", "/");
 
+            if (File.Exists(url))
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+            }
+            else
+            {
+                MessageBox.Show("File not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-        
-void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+
+        private string GetDebuggerDisplay()
+        {
+            return ToString();
+        }
+
+        private void LinkLabel_createaccount(object sender, LinkLabelLinkClickedEventArgs e)
         {
             string url = @"C:\Users\benai\source\repos\LightNovelHub\LightNovelHub\sites\createaccount.html";
             url = url.Replace(@"\", "/");
-            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+
+            if (File.Exists(url))
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+            }
+            else
+            {
+                MessageBox.Show("File not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

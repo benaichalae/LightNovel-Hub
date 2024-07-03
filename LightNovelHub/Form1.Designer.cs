@@ -185,7 +185,7 @@
             linkLabel2.TabIndex = 7;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Create Account";
-            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
+            linkLabel2.LinkClicked += LinkLabel_createaccount;
             // 
             // linkLabel1
             // 
@@ -200,7 +200,7 @@
             linkLabel1.TabIndex = 6;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Forgot Password";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            linkLabel1.LinkClicked += linkLabel_resetpassword;
             // 
             // textBox2
             // 
