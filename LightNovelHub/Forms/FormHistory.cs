@@ -6,18 +6,33 @@ namespace LightNovelHub.Forms
 {
     public partial class FormHistory : Form
     {
-        public FormHistory()
+        private Form2 parentForm;
+
+        public FormHistory(Form2 parent)
         {
             InitializeComponent();
+            this.parentForm = parent;
             LoadHistory();
         }
 
         private void LoadHistory()
         {
             var readingHistory = EpubReaderForm.ReadingHistory;
-            foreach (var entry in readingHistory)
+            // Sort the reading history by LastReadChapter in descending order
+            var sortedHistory = readingHistory.OrderByDescending(entry => entry.LastReadChapter).ToList();
+
+            foreach (var entry in sortedHistory)
             {
-                var panel = new Panel { Height = 100, Dock = DockStyle.Top, Padding = new Padding(10), Margin = new Padding(10) };
+                var panel = new TableLayoutPanel
+                {
+                    Height = 100,
+                    Dock = DockStyle.Top,
+                    Padding = new Padding(10),
+                    ColumnCount = 2,
+                    RowCount = 1,
+                    AutoSize = true,
+                    Margin = new Padding(10)
+                };
 
                 var coverPictureBox = new PictureBox
                 {
@@ -25,10 +40,11 @@ namespace LightNovelHub.Forms
                     SizeMode = PictureBoxSizeMode.StretchImage,
                     Width = 80,
                     Height = 100,
-                    Dock = DockStyle.Left,
+                    Dock = DockStyle.Fill,
                     Margin = new Padding(10)
                 };
-                panel.Controls.Add(coverPictureBox);
+                coverPictureBox.DoubleClick += (s, e) => OpenEpubReaderForm(entry);
+                panel.Controls.Add(coverPictureBox, 0, 0);
 
                 var infoPanel = new Panel { Dock = DockStyle.Fill, Margin = new Padding(10) };
 
@@ -52,25 +68,19 @@ namespace LightNovelHub.Forms
                 };
                 infoPanel.Controls.Add(chapterLabel);
 
-                panel.Controls.Add(infoPanel);
+                panel.Controls.Add(infoPanel, 1, 0);
 
                 panel.Tag = entry;
-                panel.DoubleClick += Panel_DoubleClick;
+                panel.DoubleClick += (s, e) => OpenEpubReaderForm(entry);
 
                 historyPanel.Controls.Add(panel);
             }
         }
 
-        private void Panel_DoubleClick(object? sender, EventArgs e)
+        private void OpenEpubReaderForm(ReadingHistoryEntry entry)
         {
-            if (sender is Panel panel)
-            {
-                if (panel.Tag is ReadingHistoryEntry entry)
-                {
-                    var epubReaderForm = new EpubReaderForm(entry.FilePath, entry.LastReadChapter);
-                    epubReaderForm.Show();
-                }
-            }
+            var epubReaderForm = new EpubReaderForm(entry.FilePath, entry.LastReadChapter);
+            parentForm.OpenChildForm(epubReaderForm, this);
         }
     }
 }

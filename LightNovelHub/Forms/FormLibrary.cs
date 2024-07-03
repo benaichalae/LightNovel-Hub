@@ -125,7 +125,7 @@ namespace LightNovelHub.Forms
                         lastReadChapter = lastReadChapters[epubFile];
                     }
 
-                    parentForm.OpenChildForm(new EpubReaderForm(epubFile, lastReadChapter), null);
+                    parentForm.OpenChildForm(new EpubReaderForm(epubFile, lastReadChapter), this); // Pass 'this' instead of null
                 }
             }
         }

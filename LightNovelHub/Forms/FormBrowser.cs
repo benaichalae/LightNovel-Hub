@@ -6,17 +6,22 @@ namespace LightNovelHub.Forms
 {
     public partial class FormBrowser : Form
     {
-        public FormBrowser()
+        private Form2 parentForm;
+
+        public FormBrowser(Form2 parent)
         {
             InitializeComponent();
+            parentForm = parent;
 
             // Enable drag-and-drop functionality
-            this.listView1.AllowDrop = true;
+            this.AllowDrop = true;
+            this.DragEnter += FormBrowser_DragEnter;
+            this.DragDrop += FormBrowser_DragDrop;
         }
 
-        private void FormBrowser_DragEnter(object sender, DragEventArgs e)
+        private void FormBrowser_DragEnter(object? sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            if (e.Data?.GetDataPresent(DataFormats.FileDrop) == true)
             {
                 // Check if the dropped files are ePub files
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
@@ -34,29 +39,32 @@ namespace LightNovelHub.Forms
             e.Effect = DragDropEffects.None;
         }
 
-        private void FormBrowser_DragDrop(object sender, DragEventArgs e)
+        private void FormBrowser_DragDrop(object? sender, DragEventArgs e)
         {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-
-            foreach (string file in files)
+            if (e.Data?.GetDataPresent(DataFormats.FileDrop) == true)
             {
-                // Check if it's an ePub file (optional, since it's already checked in DragEnter)
-                if (Path.GetExtension(file).Equals(".epub", StringComparison.OrdinalIgnoreCase))
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                foreach (string file in files)
                 {
-                    // Define your target folder
-                    string targetFolder = @"C:\Users\benai\source\repos\LightNovelHub\LightNovelHub\ePub";
+                    // Check if it's an ePub file (optional, since it's already checked in DragEnter)
+                    if (Path.GetExtension(file).Equals(".epub", StringComparison.OrdinalIgnoreCase))
+                    {
+                        // Define your target folder
+                        string targetFolder = @"C:\Users\benai\source\repos\LightNovelHub\LightNovelHub\ePub";
 
-                    // Construct a unique file name if necessary
-                    string fileName = Path.GetFileName(file);
-                    string destFilePath = Path.Combine(targetFolder, fileName);
+                        // Construct a unique file name if necessary
+                        string fileName = Path.GetFileName(file);
+                        string destFilePath = Path.Combine(targetFolder, fileName);
 
-                    // Copy the file to the target folder
-                    File.Copy(file, destFilePath, true); // Set overwrite to true if needed
+                        // Copy the file to the target folder
+                        File.Copy(file, destFilePath, true); // Set overwrite to true if needed
+                    }
                 }
             }
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listView1_SelectedIndexChanged(object? sender, EventArgs e)
         {
             // Implement logic for when selected index changes
             // For example, get selected item:

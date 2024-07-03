@@ -6,7 +6,6 @@ namespace LightNovelHub
 {
     public partial class Form2 : Form
     {
-        // Fields declared as nullable
         private Button? currentButton;
         private Random random;
         private int tempIndex;
@@ -16,11 +15,9 @@ namespace LightNovelHub
         {
             InitializeComponent();
             random = new Random();
-            currentButton = null; // Initialize nullable field
-            activeForm = null;    // Initialize nullable field
+            currentButton = null;
+            activeForm = null;
         }
-
-        // Methods (unchanged from your original code)
 
         private Color SelectThemeColor()
         {
@@ -34,9 +31,9 @@ namespace LightNovelHub
             return ColorTranslator.FromHtml(color);
         }
 
-        private void ActivateButton(object btnSender)
+        private void ActivateButton(object? btnSender)
         {
-            if (btnSender != null && btnSender is Button button)
+            if (btnSender is Button button)
             {
                 if (currentButton != button)
                 {
@@ -54,7 +51,7 @@ namespace LightNovelHub
         {
             foreach (Control previousBtn in panelMenu.Controls)
             {
-                if (previousBtn.GetType() == typeof(Button))
+                if (previousBtn is Button)
                 {
                     previousBtn.BackColor = Color.FromArgb(51, 51, 76);
                     previousBtn.ForeColor = Color.Gainsboro;
@@ -69,10 +66,7 @@ namespace LightNovelHub
             {
                 activeForm.Close();
             }
-            if (btnSender != null)
-            {
-                ActivateButton(btnSender);
-            }
+            ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -90,25 +84,23 @@ namespace LightNovelHub
 
         private void btnBrowser_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormBrowser(), sender);
+            OpenChildForm(new Forms.FormBrowser(this), sender);
         }
 
         private void btnHistory_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormHistory(), sender);
+            OpenChildForm(new Forms.FormHistory(this), sender);
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormProfile(), sender);
+            OpenChildForm(new Forms.FormProfile(this), sender);
         }
 
         private void btnAboutUs_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.FormAboutUs(), sender);
+            OpenChildForm(new Forms.FormAboutUs(this), sender);
         }
-
-        // Event handlers for other controls (if any)
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
