@@ -38,7 +38,6 @@
             // 
             // txtFirstName
             // 
-            txtFirstName.Anchor = AnchorStyles.Top;
             txtFirstName.Location = new Point(20, 20);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.PlaceholderText = "First Name";
@@ -47,7 +46,6 @@
             // 
             // txtLastName
             // 
-            txtLastName.Anchor = AnchorStyles.Top;
             txtLastName.Location = new Point(20, 60);
             txtLastName.Name = "txtLastName";
             txtLastName.PlaceholderText = "Last Name";
@@ -56,7 +54,6 @@
             // 
             // dtpDateOfBirth
             // 
-            dtpDateOfBirth.Anchor = AnchorStyles.Top;
             dtpDateOfBirth.Location = new Point(20, 100);
             dtpDateOfBirth.Name = "dtpDateOfBirth";
             dtpDateOfBirth.Size = new Size(204, 23);
@@ -64,7 +61,6 @@
             // 
             // cmbSexe
             // 
-            cmbSexe.Anchor = AnchorStyles.Top;
             cmbSexe.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbSexe.Items.AddRange(new object[] { "Male", "Female", "Other" });
             cmbSexe.Location = new Point(20, 140);
@@ -74,7 +70,6 @@
             // 
             // txtUsername
             // 
-            txtUsername.Anchor = AnchorStyles.Top;
             txtUsername.Location = new Point(20, 180);
             txtUsername.Name = "txtUsername";
             txtUsername.PlaceholderText = "Username";
@@ -83,7 +78,6 @@
             // 
             // txtEmail
             // 
-            txtEmail.Anchor = AnchorStyles.Top;
             txtEmail.Location = new Point(20, 220);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Email";
@@ -92,7 +86,6 @@
             // 
             // txtPassword
             // 
-            txtPassword.Anchor = AnchorStyles.Top;
             txtPassword.Location = new Point(20, 260);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
@@ -102,7 +95,6 @@
             // 
             // txtConfirmPassword
             // 
-            txtConfirmPassword.Anchor = AnchorStyles.Top;
             txtConfirmPassword.Location = new Point(20, 300);
             txtConfirmPassword.Name = "txtConfirmPassword";
             txtConfirmPassword.PasswordChar = '*';
@@ -112,7 +104,6 @@
             // 
             // btnSave
             // 
-            btnSave.Anchor = AnchorStyles.Top;
             btnSave.Location = new Point(20, 340);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(204, 31);
@@ -125,7 +116,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(26, 27, 32);
+            BackColor = Color.FromArgb(25, 26, 31);
             ClientSize = new Size(254, 401);
             Controls.Add(txtFirstName);
             Controls.Add(txtLastName);
