@@ -65,7 +65,7 @@
             btnAboutUs.FlatAppearance.BorderSize = 0;
             btnAboutUs.FlatStyle = FlatStyle.Flat;
             btnAboutUs.Font = new Font("Segoe UI", 11.25F);
-            btnAboutUs.ForeColor = Color.White;
+            btnAboutUs.ForeColor = Color.FromArgb(2, 39, 59);
             btnAboutUs.Image = (Image)resources.GetObject("btnAboutUs.Image");
             btnAboutUs.ImageAlign = ContentAlignment.MiddleLeft;
             btnAboutUs.Location = new Point(0, 360);
@@ -86,7 +86,7 @@
             btnSetting.FlatAppearance.BorderSize = 0;
             btnSetting.FlatStyle = FlatStyle.Flat;
             btnSetting.Font = new Font("Segoe UI", 11.25F);
-            btnSetting.ForeColor = Color.White;
+            btnSetting.ForeColor = Color.FromArgb(2, 39, 59);
             btnSetting.Image = (Image)resources.GetObject("btnSetting.Image");
             btnSetting.ImageAlign = ContentAlignment.MiddleLeft;
             btnSetting.Location = new Point(0, 290);
@@ -107,7 +107,7 @@
             btnHistory.FlatAppearance.BorderSize = 0;
             btnHistory.FlatStyle = FlatStyle.Flat;
             btnHistory.Font = new Font("Segoe UI", 11.25F);
-            btnHistory.ForeColor = Color.White;
+            btnHistory.ForeColor = Color.FromArgb(2, 39, 59);
             btnHistory.Image = (Image)resources.GetObject("btnHistory.Image");
             btnHistory.ImageAlign = ContentAlignment.MiddleLeft;
             btnHistory.Location = new Point(0, 220);
@@ -128,7 +128,7 @@
             btnBrowser.FlatAppearance.BorderSize = 0;
             btnBrowser.FlatStyle = FlatStyle.Flat;
             btnBrowser.Font = new Font("Segoe UI", 11.25F);
-            btnBrowser.ForeColor = Color.White;
+            btnBrowser.ForeColor = Color.FromArgb(2, 39, 59);
             btnBrowser.Image = (Image)resources.GetObject("btnBrowser.Image");
             btnBrowser.ImageAlign = ContentAlignment.MiddleLeft;
             btnBrowser.Location = new Point(0, 150);
@@ -136,7 +136,7 @@
             btnBrowser.Padding = new Padding(12, 0, 0, 0);
             btnBrowser.Size = new Size(220, 70);
             btnBrowser.TabIndex = 2;
-            btnBrowser.Text = "  Browser";
+            btnBrowser.Text = "  Add More";
             btnBrowser.TextAlign = ContentAlignment.MiddleLeft;
             btnBrowser.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnBrowser.UseVisualStyleBackColor = false;
@@ -149,7 +149,7 @@
             btnProfile.FlatAppearance.BorderSize = 0;
             btnProfile.FlatStyle = FlatStyle.Flat;
             btnProfile.Font = new Font("Segoe UI", 11.25F);
-            btnProfile.ForeColor = Color.White;
+            btnProfile.ForeColor = Color.FromArgb(2, 39, 59);
             btnProfile.Image = (Image)resources.GetObject("btnProfile.Image");
             btnProfile.ImageAlign = ContentAlignment.MiddleLeft;
             btnProfile.Location = new Point(0, 80);
