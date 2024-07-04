@@ -25,103 +25,122 @@
 
         private void InitializeComponent()
         {
-            this.txtFirstName = new TextBox();
-            this.txtLastName = new TextBox();
-            this.dtpDateOfBirth = new DateTimePicker();
-            this.cmbSexe = new ComboBox();
-            this.txtUsername = new TextBox();
-            this.txtEmail = new TextBox();
-            this.txtPassword = new TextBox();
-            this.txtConfirmPassword = new TextBox();
-            this.btnSave = new Button();
-            this.SuspendLayout();
-
+            txtFirstName = new TextBox();
+            txtLastName = new TextBox();
+            dtpDateOfBirth = new DateTimePicker();
+            cmbSexe = new ComboBox();
+            txtUsername = new TextBox();
+            txtEmail = new TextBox();
+            txtPassword = new TextBox();
+            txtConfirmPassword = new TextBox();
+            btnSave = new Button();
+            SuspendLayout();
+            // 
             // txtFirstName
-            this.txtFirstName.Location = new System.Drawing.Point(20, 20);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.PlaceholderText = "First Name";
-            this.txtFirstName.Size = new System.Drawing.Size(204, 23);
-            this.txtFirstName.TabIndex = 0;
-
+            // 
+            txtFirstName.Anchor = AnchorStyles.Top;
+            txtFirstName.Location = new Point(20, 20);
+            txtFirstName.Name = "txtFirstName";
+            txtFirstName.PlaceholderText = "First Name";
+            txtFirstName.Size = new Size(204, 23);
+            txtFirstName.TabIndex = 0;
+            // 
             // txtLastName
-            this.txtLastName.Location = new System.Drawing.Point(20, 60);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.PlaceholderText = "Last Name";
-            this.txtLastName.Size = new System.Drawing.Size(204, 23);
-            this.txtLastName.TabIndex = 1;
-
+            // 
+            txtLastName.Anchor = AnchorStyles.Top;
+            txtLastName.Location = new Point(20, 60);
+            txtLastName.Name = "txtLastName";
+            txtLastName.PlaceholderText = "Last Name";
+            txtLastName.Size = new Size(204, 23);
+            txtLastName.TabIndex = 1;
+            // 
             // dtpDateOfBirth
-            this.dtpDateOfBirth.Location = new System.Drawing.Point(20, 100);
-            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
-            this.dtpDateOfBirth.Size = new System.Drawing.Size(204, 23);
-            this.dtpDateOfBirth.TabIndex = 2;
-
+            // 
+            dtpDateOfBirth.Anchor = AnchorStyles.Top;
+            dtpDateOfBirth.Location = new Point(20, 100);
+            dtpDateOfBirth.Name = "dtpDateOfBirth";
+            dtpDateOfBirth.Size = new Size(204, 23);
+            dtpDateOfBirth.TabIndex = 2;
+            // 
             // cmbSexe
-            this.cmbSexe.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.cmbSexe.Items.AddRange(new object[] { "Male", "Female", "Other" });
-            this.cmbSexe.Location = new System.Drawing.Point(20, 140);
-            this.cmbSexe.Name = "cmbSexe";
-            this.cmbSexe.Size = new System.Drawing.Size(204, 23);
-            this.cmbSexe.TabIndex = 3;
-
+            // 
+            cmbSexe.Anchor = AnchorStyles.Top;
+            cmbSexe.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSexe.Items.AddRange(new object[] { "Male", "Female", "Other" });
+            cmbSexe.Location = new Point(20, 140);
+            cmbSexe.Name = "cmbSexe";
+            cmbSexe.Size = new Size(204, 23);
+            cmbSexe.TabIndex = 3;
+            // 
             // txtUsername
-            this.txtUsername.Location = new System.Drawing.Point(20, 180);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.PlaceholderText = "Username";
-            this.txtUsername.Size = new System.Drawing.Size(204, 23);
-            this.txtUsername.TabIndex = 4;
-
+            // 
+            txtUsername.Anchor = AnchorStyles.Top;
+            txtUsername.Location = new Point(20, 180);
+            txtUsername.Name = "txtUsername";
+            txtUsername.PlaceholderText = "Username";
+            txtUsername.Size = new Size(204, 23);
+            txtUsername.TabIndex = 4;
+            // 
             // txtEmail
-            this.txtEmail.Location = new System.Drawing.Point(20, 220);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PlaceholderText = "Email";
-            this.txtEmail.Size = new System.Drawing.Size(204, 23);
-            this.txtEmail.TabIndex = 5;
-
+            // 
+            txtEmail.Anchor = AnchorStyles.Top;
+            txtEmail.Location = new Point(20, 220);
+            txtEmail.Name = "txtEmail";
+            txtEmail.PlaceholderText = "Email";
+            txtEmail.Size = new Size(204, 23);
+            txtEmail.TabIndex = 5;
+            // 
             // txtPassword
-            this.txtPassword.Location = new System.Drawing.Point(20, 260);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.PlaceholderText = "Password";
-            this.txtPassword.Size = new System.Drawing.Size(204, 23);
-            this.txtPassword.TabIndex = 6;
-
+            // 
+            txtPassword.Anchor = AnchorStyles.Top;
+            txtPassword.Location = new Point(20, 260);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.PlaceholderText = "Password";
+            txtPassword.Size = new Size(204, 23);
+            txtPassword.TabIndex = 6;
+            // 
             // txtConfirmPassword
-            this.txtConfirmPassword.Location = new System.Drawing.Point(20, 300);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.PlaceholderText = "Confirm Password";
-            this.txtConfirmPassword.Size = new System.Drawing.Size(204, 23);
-            this.txtConfirmPassword.TabIndex = 7;
-
+            // 
+            txtConfirmPassword.Anchor = AnchorStyles.Top;
+            txtConfirmPassword.Location = new Point(20, 300);
+            txtConfirmPassword.Name = "txtConfirmPassword";
+            txtConfirmPassword.PasswordChar = '*';
+            txtConfirmPassword.PlaceholderText = "Confirm Password";
+            txtConfirmPassword.Size = new Size(204, 23);
+            txtConfirmPassword.TabIndex = 7;
+            // 
             // btnSave
-            this.btnSave.Location = new System.Drawing.Point(20, 340);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(204, 31);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-
+            // 
+            btnSave.Anchor = AnchorStyles.Top;
+            btnSave.Location = new Point(20, 340);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(204, 31);
+            btnSave.TabIndex = 8;
+            btnSave.Text = "Save";
+            btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
+            // 
             // FormProfile
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.FromArgb(61, 61, 91);
-            this.ClientSize = new System.Drawing.Size(254, 401);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.dtpDateOfBirth);
-            this.Controls.Add(this.cmbSexe);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtConfirmPassword);
-            this.Controls.Add(this.btnSave);
-            this.MinimumSize = new System.Drawing.Size(270, 440);
-            this.Name = "FormProfile";
-            this.Text = "Profile";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(26, 27, 32);
+            ClientSize = new Size(254, 401);
+            Controls.Add(txtFirstName);
+            Controls.Add(txtLastName);
+            Controls.Add(dtpDateOfBirth);
+            Controls.Add(cmbSexe);
+            Controls.Add(txtUsername);
+            Controls.Add(txtEmail);
+            Controls.Add(txtPassword);
+            Controls.Add(txtConfirmPassword);
+            Controls.Add(btnSave);
+            MinimumSize = new Size(270, 440);
+            Name = "FormProfile";
+            Text = "Profile";
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

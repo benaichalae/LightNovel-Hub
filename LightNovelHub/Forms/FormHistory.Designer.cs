@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.historyPanel = new System.Windows.Forms.Panel();
-            this.SuspendLayout();
+            historyPanel = new Panel();
+            SuspendLayout();
             // 
             // historyPanel
             // 
-            this.historyPanel.AutoScroll = true;
-            this.historyPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.historyPanel.Location = new System.Drawing.Point(0, 0);
-            this.historyPanel.Name = "historyPanel";
-            this.historyPanel.Size = new System.Drawing.Size(800, 450);
-            this.historyPanel.TabIndex = 0;
+            historyPanel.AutoScroll = true;
+            historyPanel.BackColor = Color.FromArgb(26, 27, 32);
+            historyPanel.Dock = DockStyle.Fill;
+            historyPanel.Location = new Point(0, 0);
+            historyPanel.Name = "historyPanel";
+            historyPanel.Size = new Size(800, 450);
+            historyPanel.TabIndex = 0;
             // 
             // FormHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(65, 66, 102);
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.historyPanel);
-            this.Name = "FormHistory";
-            this.Text = "Reading History";
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(65, 66, 102);
+            ClientSize = new Size(800, 450);
+            Controls.Add(historyPanel);
+            Name = "FormHistory";
+            Text = "Reading History";
+            ResumeLayout(false);
         }
 
         #endregion

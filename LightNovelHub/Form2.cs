@@ -53,7 +53,7 @@ namespace LightNovelHub
             {
                 if (previousBtn is Button)
                 {
-                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.BackColor = Color.FromArgb(25, 26, 31);
                     previousBtn.ForeColor = Color.Gainsboro;
                     previousBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
                 }

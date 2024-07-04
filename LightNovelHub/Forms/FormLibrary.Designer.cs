@@ -35,7 +35,7 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.BackColor = Color.FromArgb(61, 61, 91);
+            flowLayoutPanel1.BackColor = Color.FromArgb(26, 27, 32);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -45,7 +45,7 @@
             // 
             // panelRefreshButton
             // 
-            panelRefreshButton.BackColor = Color.FromArgb(61, 61, 91);
+            panelRefreshButton.BackColor = Color.FromArgb(26, 27, 32);
             panelRefreshButton.Dock = DockStyle.Bottom;
             panelRefreshButton.Location = new Point(0, 387);
             panelRefreshButton.Name = "panelRefreshButton";

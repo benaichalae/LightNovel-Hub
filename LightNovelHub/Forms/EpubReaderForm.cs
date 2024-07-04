@@ -43,7 +43,7 @@ namespace LightNovelHub.Forms
                 <head>
                     <style>
                         body {{
-                            background-color: rgb(65, 66, 102);
+                            background-color: rgb(26, 27, 32);
                             font-family: 'Segoe UI';
                             font-size: 11.25pt;
                             color: white;

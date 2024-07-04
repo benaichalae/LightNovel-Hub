@@ -45,7 +45,7 @@
             // 
             // panelMenu
             // 
-            panelMenu.BackColor = Color.FromArgb(51, 51, 76);
+            panelMenu.BackColor = Color.FromArgb(26, 27, 32);
             panelMenu.Controls.Add(btnAboutUs);
             panelMenu.Controls.Add(btnSetting);
             panelMenu.Controls.Add(btnHistory);
@@ -60,12 +60,12 @@
             // 
             // btnAboutUs
             // 
-            btnAboutUs.BackColor = Color.FromArgb(51, 51, 76);
+            btnAboutUs.BackColor = Color.FromArgb(26, 27, 32);
             btnAboutUs.Dock = DockStyle.Top;
             btnAboutUs.FlatAppearance.BorderSize = 0;
             btnAboutUs.FlatStyle = FlatStyle.Flat;
             btnAboutUs.Font = new Font("Segoe UI", 11.25F);
-            btnAboutUs.ForeColor = Color.FromArgb(2, 39, 59);
+            btnAboutUs.ForeColor = Color.White;
             btnAboutUs.Image = (Image)resources.GetObject("btnAboutUs.Image");
             btnAboutUs.ImageAlign = ContentAlignment.MiddleLeft;
             btnAboutUs.Location = new Point(0, 360);
@@ -81,12 +81,12 @@
             // 
             // btnSetting
             // 
-            btnSetting.BackColor = Color.FromArgb(51, 51, 76);
+            btnSetting.BackColor = Color.FromArgb(26, 27, 32);
             btnSetting.Dock = DockStyle.Top;
             btnSetting.FlatAppearance.BorderSize = 0;
             btnSetting.FlatStyle = FlatStyle.Flat;
             btnSetting.Font = new Font("Segoe UI", 11.25F);
-            btnSetting.ForeColor = Color.FromArgb(2, 39, 59);
+            btnSetting.ForeColor = Color.White;
             btnSetting.Image = (Image)resources.GetObject("btnSetting.Image");
             btnSetting.ImageAlign = ContentAlignment.MiddleLeft;
             btnSetting.Location = new Point(0, 290);
@@ -102,12 +102,12 @@
             // 
             // btnHistory
             // 
-            btnHistory.BackColor = Color.FromArgb(51, 51, 76);
+            btnHistory.BackColor = Color.FromArgb(26, 27, 32);
             btnHistory.Dock = DockStyle.Top;
             btnHistory.FlatAppearance.BorderSize = 0;
             btnHistory.FlatStyle = FlatStyle.Flat;
             btnHistory.Font = new Font("Segoe UI", 11.25F);
-            btnHistory.ForeColor = Color.FromArgb(2, 39, 59);
+            btnHistory.ForeColor = Color.White;
             btnHistory.Image = (Image)resources.GetObject("btnHistory.Image");
             btnHistory.ImageAlign = ContentAlignment.MiddleLeft;
             btnHistory.Location = new Point(0, 220);
@@ -123,12 +123,12 @@
             // 
             // btnBrowser
             // 
-            btnBrowser.BackColor = Color.FromArgb(51, 51, 76);
+            btnBrowser.BackColor = Color.FromArgb(26, 27, 32);
             btnBrowser.Dock = DockStyle.Top;
             btnBrowser.FlatAppearance.BorderSize = 0;
             btnBrowser.FlatStyle = FlatStyle.Flat;
             btnBrowser.Font = new Font("Segoe UI", 11.25F);
-            btnBrowser.ForeColor = Color.FromArgb(2, 39, 59);
+            btnBrowser.ForeColor = Color.White;
             btnBrowser.Image = (Image)resources.GetObject("btnBrowser.Image");
             btnBrowser.ImageAlign = ContentAlignment.MiddleLeft;
             btnBrowser.Location = new Point(0, 150);
@@ -144,12 +144,12 @@
             // 
             // btnProfile
             // 
-            btnProfile.BackColor = Color.FromArgb(51, 51, 76);
+            btnProfile.BackColor = Color.FromArgb(26, 27, 32);
             btnProfile.Dock = DockStyle.Top;
             btnProfile.FlatAppearance.BorderSize = 0;
             btnProfile.FlatStyle = FlatStyle.Flat;
             btnProfile.Font = new Font("Segoe UI", 11.25F);
-            btnProfile.ForeColor = Color.FromArgb(2, 39, 59);
+            btnProfile.ForeColor = Color.White;
             btnProfile.Image = (Image)resources.GetObject("btnProfile.Image");
             btnProfile.ImageAlign = ContentAlignment.MiddleLeft;
             btnProfile.Location = new Point(0, 80);
@@ -165,7 +165,6 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(51, 51, 76);
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Stretch;
             panel1.Dock = DockStyle.Top;
@@ -176,7 +175,7 @@
             // 
             // panelLibrary
             // 
-            panelLibrary.BackColor = Color.FromArgb(51, 51, 76);
+            panelLibrary.BackColor = Color.FromArgb(26, 27, 32);
             panelLibrary.BorderStyle = BorderStyle.FixedSingle;
             panelLibrary.Controls.Add(pictureBox1);
             panelLibrary.Dock = DockStyle.Fill;
