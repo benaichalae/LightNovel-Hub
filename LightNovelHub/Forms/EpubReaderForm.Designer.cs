@@ -28,55 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.btnNextChapter = new System.Windows.Forms.Button();
-            this.btnPreviousChapter = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            webBrowser1 = new WebBrowser();
+            btnNextChapter = new Button();
+            btnPreviousChapter = new Button();
+            SuspendLayout();
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(800, 400);
-            this.webBrowser1.TabIndex = 0;
+            webBrowser1.Dock = DockStyle.Fill;
+            webBrowser1.Location = new Point(0, 0);
+            webBrowser1.MinimumSize = new Size(20, 20);
+            webBrowser1.Name = "webBrowser1";
+            webBrowser1.Size = new Size(800, 450);
+            webBrowser1.TabIndex = 0;
             // 
             // btnNextChapter
             // 
-            this.btnNextChapter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNextChapter.Location = new System.Drawing.Point(713, 410);
-            this.btnNextChapter.Name = "btnNextChapter";
-            this.btnNextChapter.Size = new System.Drawing.Size(75, 23);
-            this.btnNextChapter.TabIndex = 1;
-            this.btnNextChapter.Text = "Next";
-            this.btnNextChapter.UseVisualStyleBackColor = true;
-            this.btnNextChapter.Click += new System.EventHandler(this.btnNextChapter_Click);
+            btnNextChapter.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnNextChapter.Location = new Point(698, 410);
+            btnNextChapter.Name = "btnNextChapter";
+            btnNextChapter.Size = new Size(75, 23);
+            btnNextChapter.TabIndex = 1;
+            btnNextChapter.Text = "Next";
+            btnNextChapter.UseVisualStyleBackColor = true;
+            btnNextChapter.Click += btnNextChapter_Click;
             // 
             // btnPreviousChapter
             // 
-            this.btnPreviousChapter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPreviousChapter.Location = new System.Drawing.Point(12, 410);
-            this.btnPreviousChapter.Name = "btnPreviousChapter";
-            this.btnPreviousChapter.Size = new System.Drawing.Size(75, 23);
-            this.btnPreviousChapter.TabIndex = 2;
-            this.btnPreviousChapter.Text = "Previous";
-            this.btnPreviousChapter.UseVisualStyleBackColor = true;
-            this.btnPreviousChapter.Click += new System.EventHandler(this.btnPreviousChapter_Click);
+            btnPreviousChapter.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnPreviousChapter.Location = new Point(12, 410);
+            btnPreviousChapter.Name = "btnPreviousChapter";
+            btnPreviousChapter.Size = new Size(75, 23);
+            btnPreviousChapter.TabIndex = 2;
+            btnPreviousChapter.Text = "Previous";
+            btnPreviousChapter.UseVisualStyleBackColor = true;
+            btnPreviousChapter.Click += btnPreviousChapter_Click;
             // 
             // EpubReaderForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(65, 66, 102);
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnPreviousChapter);
-            this.Controls.Add(this.btnNextChapter);
-            this.Controls.Add(this.webBrowser1);
-            this.Name = "EpubReaderForm";
-            this.Text = "EpubReaderForm";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(65, 66, 102);
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnPreviousChapter);
+            Controls.Add(btnNextChapter);
+            Controls.Add(webBrowser1);
+            Name = "EpubReaderForm";
+            Text = "EpubReaderForm";
+            ResumeLayout(false);
         }
 
         #endregion
