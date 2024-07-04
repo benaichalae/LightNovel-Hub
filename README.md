@@ -2,7 +2,7 @@
 
 LightNovelHub is a software application designed for avid light novel readers. Developed using Visual Studio, this application allows users to read, manage, and add light novels from EPUB files. It also tracks and saves your reading progress, ensuring a seamless and enjoyable reading experience.
 
-![Librarynovel-hub](Librarynovel-hub.PNG)
+![Librarynovel-hub](Lightnovel-hub.PNG)
 ![Library](Library.PNG)
 ## Features
 
