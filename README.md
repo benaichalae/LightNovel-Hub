@@ -23,17 +23,17 @@ LightNovelHub is a software application designed for avid light novel readers. D
 
 1. Clone the repository:
    ```bash
-    git clone https://github.com/yourusername/LightNovelHub.git```
+    git clone https://github.com/yourusername/LightNovelHub.git
 
 2. Open the solution file LightNovelHub.sln in Visual Studio.
 
 3. Restore the NuGet packages:
    ```bash
-    nuget restore LightNovelHub.sln```
+    nuget restore LightNovelHub.sln
    
 4. Build the solution:
    ```bash
-   msbuild LightNovelHub.sln```
+   msbuild LightNovelHub.sln
 
 5. Run the application:
 Press F5 in Visual Studio, Or execute the compiled binary from the bin directory.
