@@ -23,7 +23,7 @@ LightNovelHub is a software application designed for avid light novel readers. D
 
 1. Clone the repository:
    ```bash
-    git clone https://github.com/yourusername/LightNovelHub.git
+    git clone https://github.com/benaichalae/LightNovel-Hub.git
 
 2. Open the solution file LightNovelHub.sln in Visual Studio.
 
